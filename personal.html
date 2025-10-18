@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Step 2: Personal Details</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+    }
+
+    /* Steps Navigation */
+    .steps {
+      display: flex;
+      justify-content: left;
+      background-color: #d9d9d9;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .step {
+      padding: 12px 25px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .step1 {
+      background-color: #90ee90; /* completed = green */
+    }
+
+    .active {
+      background-color: #6da9e9; /* current = blue */
+      font-weight: bold;
+    }
+
+    /* Form Box */
+    fieldset {
+      width: 70%;
+      margin: 40px auto;
+      border: 2px solid #999;
+      padding: 30px;
+    }
+
+    legend {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="url"] {
+      width: 100%;
+      padding: 8px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+    }
+
+    /* CNIC field styling */
+    .cnic-group {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 5px;
+    }
+
+    .cnic-input {
+      width: 45px;
+      padding: 8px;
+      text-align: center;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .cnic-dash {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    /* Buttons */
+    .button-container {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      width: 50%;
+    }
+
+    .btn {
+      background-color: #003366;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #00509e;
+    }
+
+    .arrow {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Steps -->
+  <div class="steps">
+    <div class="step step1" onclick="window.location.href='account.html'">Step 1: Account</div>
+    <div class="step active">Step 2: Personal Details</div>
+    <div class="step">Step 3: Your Review</div>
+  </div>
+
+  <!-- Personal Details Form -->
+  <form>
+    <fieldset>
+      <legend>Personal Details</legend>
+
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" placeholder="Enter First Name" required>
+
+      <label for="lname">Last Name:</label>
+      <input type="text" id="lname" placeholder="Enter Last Name" required>
+
+      <label>CNIC:</label>
+      <div class="cnic-group">
+        <input type="text" maxlength="5" class="cnic-input" placeholder="">
+        <span class="cnic-dash">-</span>
+        <input type="text" maxlength="7" class="cnic-input" placeholder="">
+        <span class="cnic-dash">-</span>
+        <input type="text" maxlength="1" class="cnic-input" placeholder="">
+      </div>
+
+      <label for="social">Social Link:</label>
+      <input type="url" id="social" placeholder="Enter Facebook/LinkedIn profile link">
+
+      <div class="button-container">
+        <button type="button" class="btn" onclick="window.location.href='account.html'">
+          <span class="arrow">&#8592;</span> Back
+        </button>
+        <button type="button" class="btn" onclick="window.location.href='review.html'">
+          Next <span class="arrow">&#8594;</span>
+        </button>
+      </div>
+    </fieldset>
+  </form>
+
+</body>
+</html>
